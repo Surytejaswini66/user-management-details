@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import UserList from "./components/UserList";
+import UserForm from "./components/UserForm";
 
-function App() {
+const App = () => {
+  const [users, setUsers] = useState([]);
+  const [editingUser, setEditingUser] = useState(null);
+  const [isFormVisible, setFormVisible] = useState(false);
+
+  // Handle Add New User
+
+  // Handle Edit Existing User
+  const handleEdit = (user) => {
+    setEditingUser(user); // Set the selected user for editing
+    setFormVisible(true); // Show the UserForm for editing
+  };
+
+  // Handle User Form Close
+  const handleFormClose = () => {
+    setFormVisible(false); // Close the UserForm
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <UserList onRefresh={setUsers} />
+
+      {isFormVisible && (
+        <UserForm
+          user={editingUser}
+          onClose={handleFormClose}
+          onRefresh={setUsers}
+        />
+      )}
     </div>
   );
-}
+};
 
 export default App;

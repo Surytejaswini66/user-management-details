@@ -1,4 +1,4 @@
-form-overlay {
+.form-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -61,4 +61,7 @@ form-overlay {
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
+}
+.close-button:hover {
+  background-color: #d32f2f;
 }

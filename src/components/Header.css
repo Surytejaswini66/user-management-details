@@ -1,0 +1,22 @@
+/* Styling for the Header */
+.header {
+  background-color: #2c3e50; /* Dark teal background */
+  color: white; /* White text */
+  padding: 20px 40px; /* Padding to space out the content */
+  text-align: center; /* Center the text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header h1 {
+  font-family: "Roboto", sans-serif; /* Modern sans-serif font */
+  font-size: 24px; /* Suitable font size */
+  font-weight: bold; /* Make the text bold */
+  letter-spacing: 1px; /* Slightly increase the letter spacing */
+  margin: 0; /* Remove default margin */
+}
+
+/* Optional: Hover effect to make the header interactive */
+.header:hover {
+  background-color: #34495e; /* Lighter dark teal on hover */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
